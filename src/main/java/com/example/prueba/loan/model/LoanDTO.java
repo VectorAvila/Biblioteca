@@ -7,14 +7,22 @@ import org.springframework.format.annotation.DateTimeFormat;
 import com.example.prueba.book.model.BookDTO;
 import com.example.prueba.person.model.PersonDTO;
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class LoanDTO {
 
+	@JsonProperty("persona")
 	private PersonDTO person;
+	
+	@JsonProperty("libro")
     private BookDTO book;
+	
+	@JsonProperty("fecPrestamo")
     @DateTimeFormat(pattern = "dd/MM/yyyy")
     @JsonFormat(pattern = "dd/MM/yyyy")
     private Date fecPrestamo;
+    
+	@JsonProperty("fecDevolucion")
     @DateTimeFormat(pattern = "dd/MM/yyyy")
     @JsonFormat(pattern = "dd/MM/yyyy")
     private Date fecDevolucion;

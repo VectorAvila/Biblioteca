@@ -5,15 +5,25 @@ import java.util.Date;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class BookDTO {
 
+	
 	private Integer isbn;
+	
+	@JsonProperty("titulo")
     private String title;
+	
+	@JsonProperty("autor")
     private String author;
+	
+	@JsonProperty("fecPublicacion")
     @DateTimeFormat(pattern = "dd/MM/yyyy")
     @JsonFormat(pattern = "dd/MM/yyyy")
     private Date publicationDate;
+	
+	@JsonProperty("disponible")
     private Boolean available;
     
 	public BookDTO() {

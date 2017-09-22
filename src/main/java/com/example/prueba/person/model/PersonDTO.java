@@ -6,6 +6,7 @@ import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -15,14 +16,23 @@ public class PersonDTO {
 
 	@NotEmpty
 	private String dni;
+	
+	@JsonProperty("nombre")
 	@ApiModelProperty(value = "Nombre de la persona", required = true)
 	private String name;
+	
+	@JsonProperty("apellidos")
 	@ApiModelProperty(value = "Apellidos de la persona", required = true)
 	private String surname;
+	
+	@JsonProperty("telefonos")
 	@ApiModelProperty(value = "Telefonos de la persona", required = false)
 	private String phoneNumber;
+	
+	@JsonProperty("direccion")
 	private String address;
 	
+	@JsonProperty("fecNacimiento")
 	@DateTimeFormat(pattern = "dd/MM/yyyy")
     @JsonFormat(pattern = "dd/MM/yyyy")
 	private Date birthDate;
