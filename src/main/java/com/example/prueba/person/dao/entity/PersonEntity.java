@@ -33,7 +33,7 @@ public class PersonEntity implements Serializable {
 	private String surname;
 	
 	@Column(name="telefonos")
-	private String phoneNumbers;
+	private String phoneNumber;
 	
 	@Column(name="direccion")
 	private String address;
@@ -46,13 +46,13 @@ public class PersonEntity implements Serializable {
 		// TODO Auto-generated constructor stub
 	}
 
-	public PersonEntity(String dni, String name, String surname, String phoneNumbers, String address,
+	public PersonEntity(String dni, String name, String surname, String phoneNumber, String address,
 			Date birthDate) {
 		super();
 		this.dni = dni;
 		this.name = name;
 		this.surname = surname;
-		this.phoneNumbers = phoneNumbers;
+		this.phoneNumber = phoneNumber;
 		this.address = address;
 		this.birthDate = birthDate;
 	}
@@ -89,12 +89,12 @@ public class PersonEntity implements Serializable {
 		this.surname = surname;
 	}
 
-	public String getPhoneNumbers() {
-		return phoneNumbers;
+	public String getPhoneNumber() {
+		return phoneNumber;
 	}
 
-	public void setPhoneNumbers(String phoneNumbers) {
-		this.phoneNumbers = phoneNumbers;
+	public void setPhoneNumber(String phoneNumber) {
+		this.phoneNumber = phoneNumber;
 	}
 
 	public String getAddress() {
